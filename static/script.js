@@ -1,22 +1,22 @@
 
 const beeps = {
-    "1": new Audio('/static/beeps/one.wav'),
-    "2": new Audio('/static/beeps/two.wav'),
-    "3": new Audio('/static/beeps/three.wav'),
-    "4": new Audio('/static/beeps/four.wav'),
-    "5": new Audio('/static/beeps/five.wav'),
-    "6": new Audio('/static/beeps/six.wav'),
-    "7": new Audio('/static/beeps/seven.wav'),
-    "8": new Audio('/static/beeps/eight.wav'),
-    "9": new Audio('/static/beeps/nine.wav'),
-    "0": new Audio('/static/beeps/zero.wav'),
-    "C": new Audio('/static/beeps/star.wav'),
-    "H": new Audio('/static/beeps/hash.wav')
+    "1": new Audio('static/beeps/one.wav'),
+    "2": new Audio('static/beeps/two.wav'),
+    "3": new Audio('static/beeps/three.wav'),
+    "4": new Audio('static/beeps/four.wav'),
+    "5": new Audio('static/beeps/five.wav'),
+    "6": new Audio('static/beeps/six.wav'),
+    "7": new Audio('static/beeps/seven.wav'),
+    "8": new Audio('static/beeps/eight.wav'),
+    "9": new Audio('static/beeps/nine.wav'),
+    "0": new Audio('static/beeps/zero.wav'),
+    "C": new Audio('static/beeps/star.wav'),
+    "H": new Audio('static/beeps/hash.wav')
 };
 
 const audio = new Audio();
 
-const hangup = new Audio('/static/snd/hangup.mp3');
+const hangup = new Audio('static/snd/hangup.mp3');
 
 var calling = false;
 
@@ -109,8 +109,8 @@ async function start_call() {
 
     let name = get_name(numero);
     if (name != "") {
-      document.getElementById("picture").src = "/static/pic/wave3.gif";
-      audio.src = "/static/snd/" + name;
+      document.getElementById("picture").src = "static/wave3.gif";
+      audio.src = "static/snd/" + name;
       audio.play();
       calling = true;
     }
@@ -135,5 +135,4 @@ document.getElementById("call").addEventListener("click", toggle_call);
 
 audio.addEventListener("ended", end_call);
 audio.addEventListener("error", end_call);
-
 
