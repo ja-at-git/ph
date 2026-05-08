@@ -1,1 +1,111 @@
 
+@font-face {
+  font-family: sevensegment;
+  src: url("Seven Segment.ttf");
+}
+
+html{
+  padding: 0;
+  box-sizing: border-box; /* Includes borders in widths and heights */
+  background: white;
+  user-select: none; 
+}
+
+html, body {
+  height: 100%; /* Base height for percentage-based children */
+  margin: 0; /* Remove default margin */
+}
+
+
+/* Layout */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden; /* The overflow is clipped, and the rest of the content will be invisible. Content can be scrolled programmatically */
+}
+
+#containerPhone{ /* Shape of the phone */
+  flex: 1;
+  width: 100%;
+  background: #FFA500;
+}
+
+#screen{
+  display: flex;
+  width: 90%;
+  min-height: 14rem;
+  height: 35vh;
+  max-height: 35vh;
+  margin: 25px auto;
+  padding: 0.5rem;
+  border-radius: 50px 50px 10px 10px;
+  background: black;
+  position: relative;
+  justify-content: center;
+}
+
+#number{
+  text-align: center;
+  font-family: sevensegment;
+  font-size: 60px;
+  position: absolute;
+  bottom: 20px;
+  margin: 0 auto;
+  color: #7CFC00;
+  background: #01011c;
+}
+
+#picture{
+  max-width: 90%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+
+#ContainerKeys{ /* Contains keys on the keypad */
+  box-shadow: 4px 1px 0px 1px black inset; /* Creates a shadow on containerKeys that makes it look like it is inset slightly */
+  /*border: 4px solid black;*/
+  width: 90%;
+  min-height: 20rem;
+  height: 50vh;
+  max-height: 50vh;
+  margin: 25px auto;
+  padding: 0.5rem;
+  border-radius: 20px;
+  background: #3F3F4E;
+  display: flex; /* so keys fit evenly in row */  
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.row{
+  display: flex; /* so keys fit evenly in row */
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  margin: 1%;
+}
+
+.key{
+  box-shadow: 3px 2px 0px black;
+  width: 100%;
+  height: 100%;
+  margin: 1px 2%;
+  text-align: center; /* Text is centered in the key */
+  border-radius: 20px;
+  font-size: 40px; /* Changes size of text in key */
+  font-family: sevensegment;
+  background: #BE5505;
+  color: black; /* Text color */
+}
+
+
+.abc{
+  font-size: 15px;
+  line-height: 1rem;
+}
+
