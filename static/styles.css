@@ -85,6 +85,7 @@ body {
 .row{
   display: flex; /* so keys fit evenly in row */
   flex-direction: row;
+  align-items: center;
   justify-content: space-evenly;
   flex-grow: 1;
   margin: 1%;
