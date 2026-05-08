@@ -109,7 +109,7 @@ async function start_call() {
 
     let name = get_name(numero);
     if (name != "") {
-      document.getElementById("picture").src = "static/wave3.gif";
+      document.getElementById("picture").src = "static/wave.gif";
       audio.src = "static/snd/" + name;
       audio.play();
       calling = true;
