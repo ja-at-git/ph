@@ -85,13 +85,14 @@ body {
 .row{
   display: flex; /* so keys fit evenly in row */
   flex-direction: row;
-  align-items: center;
   justify-content: space-evenly;
   flex-grow: 1;
   margin: 1%;
 }
 
 .key{
+  display: flex; /* so keys fit evenly in row */
+  align-items: center;
   box-shadow: 3px 2px 0px black;
   width: 100%;
   height: 100%;
