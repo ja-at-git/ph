@@ -1,51 +1,87 @@
-<!doctype html>
-<html>
-    <head>
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-    </head>
 
-    <body style="margin: 0; overflow: hidden;">
-        <a-scene
-            vr-mode-ui="enabled: false;"
-            loading-screen="enabled: false;"
-            renderer="logarithmicDepthBuffer: true;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-            id="scene"
-            embedded
-            gesture-detector
-        >
-            <a-assets>
-                <a-asset-item
-                    id="animated-asset"
-                    src="assets/asset.glb"
-                ></a-asset-item>
-            </a-assets>
+<!DOCTYPE html>
+<html lang="en">
 
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
-            >
-                <a-entity
-                    id="bowser-model"
-                    scale="0.1359509608176216 0.1359509608176216 0.1359509608176216"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset"
-                    class="clickable"
-                    gesture-handler
-                ></a-entity>
-            </a-marker>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/script.js" defer></script>
+  </head>
 
-            <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+  <body>
+    <div id="containerPhone"> <!-- containerPhone start -->
+  
+      <div id="screen">
+        <img id="picture">
+        <div id="number"></div>
+      </div>
+
+      <div id="ContainerKeys"> <!-- ContainerKeys start -->
+        <div class="row"> <!-- row 1 start -->
+         <div id="1" class="key num">
+           <div class="abc">&nbsp</div> <!-- "&nbsp" displays as nothing -->
+           1
+          </div>
+         <div id="2" class="key num">
+           <div class="abc">ABC</div>
+           2
+          </div>
+         <div id="3" class="key num">
+           <div class="abc">DEF</div>
+           3
+          </div>
+        </div> <!-- row 1 end -->
+      
+        <div class="row"> <!-- row 2 start -->
+         <div id="4" class="key num">
+           <div class="abc">GHI</div>
+           4
+          </div>
+         <div id="5" class="key num">
+           <div class="abc">JKL</div>
+           5
+          </div>
+         <div id="6" class="key num">
+           <div class="abc">MNO</div>
+           6
+          </div>
+        </div> <!-- row 2 end -->
+  
+        <div class="row"> <!-- row 3 start -->
+         <div id="7" class="key num">
+           <div class="abc">PQRS</div>
+           7
+          </div>
+         <div id="8" class="key num">
+           <div class="abc">TUV</div>
+           8
+          </div>
+         <div id="9" class="key num">
+           <div class="abc">WXYZ</div>
+           9
+          </div>
+        </div> <!-- row 3 end -->
+  
+        <div class="row"> <!-- row 4 start -->
+         <div id="correct" class="key">
+           <div class="abc">&nbsp</div>
+           C
+          </div>
+         <div id="0" class="key num"> 
+           <div class="abc">&nbsp</div>
+           0
+          </div>
+         <div id="call" class="key">
+           <div class="abc">&nbsp</div>
+           📞
+          </div>
+        </div> <!-- row 4 end -->
+  
+      </div> <!-- ContainerKeys end -->
+
+    </div> <!-- containerPhone end -->
+
+  </body>
 </html>
