@@ -22,28 +22,19 @@ var calling = false;
 
 function get_name(number) {
 
-  name = "default.mp3"
+  name = "default.wav"
 
   switch (number) {
     case "80038":
-      name = "indice1.wav"; // OK
-      break;
-
+      name = "indice1.wav"; break;
     case "21024":
-      name = "indice2.wav"; // OK
-      break;
-
+      name = "indice2.wav"; break;
     case "79092":
-      name = "indice3.wav"; // OK
-      break;
-
+      name = "indice3.wav"; break;
     case "54538":
-      name = "indice4.wav"; // OK
-      break;
-
+      name = "indice4.wav"; break;
     case "25541":
-      name = "indice5.wav"; // OK
-      break;
+      name = "indice5.wav"; break;
   }
   return name;
 
@@ -59,9 +50,8 @@ function add_digit(evt) {
   beep.play();
 
   let div_number = document.getElementById("number");
-  if (div_number.textContent.length < 5) {
+  if (div_number.textContent.length < 5)
     div_number.textContent = div_number.textContent + evt.currentTarget.id;
-  }
 
 }
 
@@ -78,15 +68,15 @@ function remove_digit(evt) {
 
 function toggle_call(evt) {
 
-  if (calling) {
+  if (calling)
     end_call(evt);
-  }
   else {
     let beep = beeps["H"];
     beep.currentTime = 0;
     beep.play();
     start_call(evt);
   }
+
 }
 
 
@@ -114,9 +104,8 @@ async function start_call() {
       audio.play();
       calling = true;
     }
-    else {
+    else
       end_call();
-    }
   }
 
 }
@@ -135,4 +124,18 @@ document.getElementById("call").addEventListener("click", toggle_call);
 
 audio.addEventListener("ended", end_call);
 audio.addEventListener("error", end_call);
+
+const splashScreen = document.getElementById("splashScreen");
+const startBtn = document.getElementById("startBtn");
+ 
+startBtn.addEventListener("click", async () => {
+  try {
+    // Hide splash screen and enter full screen
+    splashScreen.style.display = "none";
+    await document.documentElement.requestFullscreen();
+  } catch (err) {
+    alert(`Failed to enter full screen: ${err.message}`);
+    splashScreen.style.display = "flex"; // Show splash screen again on error
+  }
+});
 
