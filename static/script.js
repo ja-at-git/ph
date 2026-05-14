@@ -113,15 +113,14 @@ async function start_call() {
 document.getElementById("picture").src = "static/cute.png";
 
 for (key of document.getElementsByClassName("num")) {
-  //key.addEventListener("touchstart", add_digit);
-  key.addEventListener("click", add_digit);
+  key.addEventListener("touchstart", add_digit);
+  //key.addEventListener("click", add_digit);
 }
 
-//document.getElementById("correct").addEventListener("touchstart", remove_digit);
-//document.getElementById("call").addEventListener("touchstart", toggle_call);
-
-document.getElementById("correct").addEventListener("click", remove_digit);
-document.getElementById("call").addEventListener("click", toggle_call);
+document.getElementById("correct").addEventListener("touchstart", remove_digit);
+document.getElementById("call").addEventListener("touchstart", toggle_call);
+//document.getElementById("correct").addEventListener("click", remove_digit);
+//document.getElementById("call").addEventListener("click", toggle_call);
 
 audio.addEventListener("ended", end_call);
 audio.addEventListener("error", end_call);
