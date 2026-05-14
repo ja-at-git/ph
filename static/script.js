@@ -49,9 +49,11 @@ function add_digit(evt) {
   beep.currentTime = 0;
   beep.play();
 
-  let div_number = document.getElementById("number");
-  if (div_number.textContent.length < 5)
-    div_number.textContent = div_number.textContent + evt.currentTarget.id;
+  if (!calling) {
+    let div_number = document.getElementById("number");
+    if (div_number.textContent.length < 5)
+      div_number.textContent = div_number.textContent + evt.currentTarget.id;
+  }
 
 }
 
@@ -60,9 +62,11 @@ function remove_digit(evt) {
   let beep = beeps["C"];
   beep.currentTime = 0;
   beep.play();
-  let div_number = document.getElementById("number");
-  div_number.textContent = div_number.textContent.slice(0, -1)
 
+  if (!calling) {
+    let div_number = document.getElementById("number");
+    div_number.textContent = div_number.textContent.slice(0, -1)
+  }
 }
 
 
