@@ -86,7 +86,7 @@ function end_call(evt) {
   hangup.currentTime = 0;
   hangup.play();
   document.getElementById("number").textContent = "";
-  document.getElementById("picture").src = "";
+  document.getElementById("picture").src = "static/cute.png";
   calling = false;
 
 }
@@ -110,6 +110,7 @@ async function start_call() {
 
 }
 
+document.getElementById("picture").src = "static/cute.png";
 
 for (key of document.getElementsByClassName("num")) {
   //key.addEventListener("touchstart", add_digit);
